@@ -13,11 +13,14 @@
 html, body { height: 100%; margin: 0; padding: 0; background-color: var(--bg-fallback); }
 
 body {
+    margin: 0;
+    padding: 0;
     background-image: url('sfondo.jpeg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
     min-height: 100vh;
+   position: relative; /* posso posizionare gli elementi rispetto al body */
 }
 
 /* ==========================================================================
@@ -60,7 +63,7 @@ body {
 }
 
 .speech-bubble {
-    position: fixed;
+    position: absolute;
     right: 20px;
     top: 50px;
     left: auto;
@@ -83,7 +86,7 @@ body {
 
 /* Il contenitore mantiene la posizione fissa */
 .star-container {
-    position: fixed;
+    position: absolute;
     top: 150px;
     left: 35%;
     width: 100px;
@@ -92,10 +95,10 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    pointer-events: none; /* Così non blocca i click */
+    pointer-events: none; /* non blocca i click */
 }
 
-/* La stella ora è dentro il contenitore, quindi non serve più 'left/top' qui */
+/* La stella è dentro il contenitore */
 .rotating-star {
     position: absolute; /* Si posiziona rispetto al contenitore */
     width: 100%;
