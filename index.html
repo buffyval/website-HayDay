@@ -39,5 +39,30 @@
     </div>
 
     <script src="script.js"></script>
+
+    <script>
+window.addEventListener('load', function() {
+    // Lista di tutte le tue immagini e audio
+    const risorse = [
+        'star.webp',
+        'sfondobello.jpeg',
+        'CaricamentoLogo.jpeg',
+        'intro.mp3',
+        'melody.mp3',
+        'theme.mp3'
+    ];
+
+    risorse.forEach(function(src) {
+        if (src.endsWith('.mp3')) {
+            const audio = new Audio();
+            audio.src = src;
+        } else {
+            const img = new Image();
+            img.src = src;
+        }
+    });
+    console.log("Precaricamento completato!");
+});
+</script>
 </body>
 </html>
