@@ -64,12 +64,12 @@ body {
 
 .speech-bubble {
     position: absolute;
-    right: 10px;
-    top: 50px;
+    right: 5vw;
+    top: 15vh;
     left: auto;
     bottom: auto;
     width: auto;
-    max-width: 200px;
+    max-width: 80vw;
     min-height: 100px;
     background: #F5E6D6;
     color: #5B3A29;
@@ -87,10 +87,10 @@ body {
 /* Il contenitore mantiene la posizione fissa */
 .star-container {
     position: absolute;
-    top: 150px;
-    left: 35%;
-    width: 100px;
-    height: 100px; /* Deve essere uguale alla larghezza della stella */
+    top: 25vh;
+    left: 45vw;
+    width: 80px;
+    height: 80px; /* Deve essere uguale alla larghezza della stella */
     display: flex;
     align-items: center;
     justify-content: center;
