@@ -80,7 +80,7 @@ body {
 .speech-bubble {
     position: absolute;
     right: 5%;
-    top: 5%;
+    top: 15%;
     left: auto;
     bottom: auto;
     width: auto;
@@ -102,7 +102,7 @@ body {
 /* Il contenitore mantiene la posizione fissa */
 .star-container {
     position: absolute;
-    top: 7%;
+    top: 20%;
     left: 45%;
     width: 80px;
     height: 80px; /* Deve essere uguale alla larghezza della stella */
