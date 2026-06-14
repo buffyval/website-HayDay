@@ -1,4 +1,3 @@
-#Websites for fun
 These websites are created for pure non-sense reason. The only reason is I wanted to have fun with personalized things.
 Feel free to copy and modify the code and make it your own.
 
