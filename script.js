@@ -3,31 +3,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const startOverlay = document.getElementById('start-overlay');
     const audioBlack = document.getElementById('audio-black');
     const audioLoading = document.getElementById('audio-loading');
-    const audioFinal = document.getElementById('audio-final'); // Recuperiamo il terzo audio
+    const audioFinal = document.getElementById('audio-final');
 
     btnStart.addEventListener('click', () => {
+        // Nasconde l'overlay al primo click
         startOverlay.style.display = 'none';
+        // Parte il primo audio
         audioBlack.play();
+    }, { once: true });
 
-        // 1. Dopo 2.5s passa da Nero a Caricamento
-        setTimeout(() => {
-            audioBlack.pause();
-            audioBlack.currentTime = 0;
-            audioLoading.play();
-        }, 2500);
+    // Quando audioBlack finisce, fa partire il secondo
+    audioBlack.addEventListener('ended', () => {
+        audioLoading.play();
+    });
 
-        // 2. Dopo 5s (fine splash caricamento) passa a Audio Finale
-        setTimeout(() => {
-            audioLoading.pause();
-            audioLoading.currentTime = 0;
-            audioFinal.play(); // Parte l'audio del sito
-        }, 5000);
-
-        // 3. Dopo 35s totali (5s di caricamento + 30s di audio finale) lo ferma
+    // Quando audioLoading finisce, fa partire il terzo
+    audioLoading.addEventListener('ended', () => {
+        audioFinal.play();
+    });
+    
+    // Ferma l'audio finale dopo 30 secondi (opzionale)
+    audioFinal.addEventListener('play', () => {
         setTimeout(() => {
             audioFinal.pause();
             audioFinal.currentTime = 0;
-        }, 35000);
-
-    }, { once: true });
+        }, 30000); 
+    });
 });
